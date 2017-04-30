@@ -3,13 +3,15 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require('path');
 
-var friendDB = require("./app/data/friends.js");
+var Friend = require("./app/data/friends.js");
+var friendDB = new Friend();
+
 var loadHTMLStaticPages = require("./app/routing/htmlRoutes.js");
 var loadAPIRoutes = require("./app/routing/apiRoutes.js");
 
 //express setup
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 //sets up express to serve static files
 app.use(express.static(path.join(__dirname, '../public'), {index:false,extensions:['html']}));
