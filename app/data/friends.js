@@ -1,38 +1,31 @@
-function Friend(name, photo, scores) {
+function Friend() {
 
     if (!(this instanceof Friend)) {
-        return new Friend(name, photo, scores);
+        return new Friend();
     }
 
-    this.name = name;
-    this.photo = photo;
-    this.scores =  scores;
 }
 
 Friend.prototype.friends = [
     {
-        name: "Tester Ones1",
+        name: "Tester Ones",
         photo: "https://www.drupal.org/files/user-pictures/picture-2783135-1450510078.png",
         scores: ["1","1","1","1","1","1","1","1","1","1"]
     },
     {
-        name: "Tester Ones2",
+        name: "Tester Threes",
         photo: "https://www.drupal.org/files/user-pictures/picture-2783135-1450510078.png",
-        scores: ["1","1","1","1","1","1","1","1","1","1"]
+        scores: ["3","3","3","3","3","3","3","3","3","3"]
     },
     {
-        name: "Tester Twos1",
-        photo: "https://www.drupal.org/files/user-pictures/picture-2783135-1450510078.png",
-        scores: ["2","2","2","2","2","2","2","2","2","2"]
-    },
-    {
-        name: "Tester Fives1",
+        name: "Tester Fives",
         photo: "https://www.drupal.org/files/user-pictures/picture-2783135-1450510078.png",
         scores: ["5","5","5","5","5","5","5","5","5","5"]
     }
 ];
 
-Friend.prototype.getBestMatch = function () {
+Friend.prototype.getBestMatch = function (newFriend) {
+
     
 }
 
