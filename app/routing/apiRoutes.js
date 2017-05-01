@@ -8,8 +8,8 @@ function loadAPIRoutes(app, friendsDBobj) {
     app.post("/api/friends", function(request, response) {
         var newFriend = request.body;
         friendsDBobj.friends.push(newFriend);
-        return response.json(friendsDBobj.friends.getBestMatch(newFriend));
+        return response.json(friendsDBobj.getBestMatch(newFriend));
     });
 }
 
-module.exports = loadAPIRoutes
+module.exports = loadAPIRoutes;

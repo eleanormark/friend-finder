@@ -3,7 +3,6 @@ function Friend() {
     if (!(this instanceof Friend)) {
         return new Friend();
     }
-
 }
 
 Friend.prototype.friends = [
@@ -25,9 +24,23 @@ Friend.prototype.friends = [
 ];
 
 Friend.prototype.getBestMatch = function (newFriend) {
+    var newFriendSum = newFriend.scores.reduce(getSum,0);
+    var difFriendsArr = [];
 
-    
+    // use Friend.prototype.friends - 1 to exclude newFriend value
+    for(var i = 0; i < Friend.prototype.friends.length - 1; i++){
+       var sum = Friend.prototype.friends[i].scores.reduce(getSum,0);
+       difFriendsArr.push(Math.abs(sum - newFriendSum));
+    }
+
+    var minDiff = Math.min.apply(null, difFriendsArr);
+    var bestMatchIndex = difFriendsArr.indexOf(minDiff);
+
+    return Friend.prototype.friends[bestMatchIndex];
 }
 
+function getSum(total, num) {
+    return parseInt(total) + parseInt(num);
+}
 
 module.exports = Friend;
