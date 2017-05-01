@@ -2,9 +2,10 @@
   "name": "friend-finder",
   "version": "1.0.0",
   "description": "This full-stack site will take in results your users' surveys, then compare their answers with those from other users. The app will then display the name and picture of the user with the best overall match.  Express is used to handle routing.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,6 @@
   "homepage": "https://github.com/eleanormark/friend-finder#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "nodemon": "^1.11.0",
-    "path": "^0.12.7"
+    "express": "^4.15.2"
   }
 }
